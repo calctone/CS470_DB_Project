@@ -1,5 +1,6 @@
 package com.cs.medscheduler.entity;
 
+@SuppressWarnings("javadoc")
 public class PersonEntity
 {
     private int id;

@@ -3,6 +3,32 @@
 
     <string name="app_name">MedScheduler</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="chk_head">Head</string>
+    <string name="chk_body">Body</string>
+    <string name="chk_nose">Nose</string>
+    <string name="chk_throat">Throat</string>
+    <string name="chk_ears">Ears</string>
+    <string name="chk_arms">Arms</string>
+    <string name="chk_legs">Legs</string>
+    <string name="chk_genital">Genital</string>    
+    <string name="btn_display">Display</string>    
+    <string name="img_home_desc">Welcome</string>
+    <string name="btn_continue">Continue</string>
+    <string name="txt_password">Password:</string>
+    <string name="btn_login">Login:</string>
+    <string name="txt_user_name">User Name:</string>
+    <string name="txt_register">Don\'t have an account? Please register:</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_register">Register</string>
+    <string name="txt_symptoms">Please check your symtoms below:</string>
+    <string name="txt_first_name">First Name:</string>
+    <string name="txt_last_name">Last Name:</string>
+    <string name="txt_ssn">SSN:</string>
+    <string name="txt_zip">Zip Code:</string>
+    <string name="txt_phone">Phone:</string>
+    <string name="txt_city">City:</string>
+    <string name="txt_role">Role:</string>
+    <string name="txt_country">Country:</string>
+    <string name="btn_submit">Submit</string>
 
 </resources>

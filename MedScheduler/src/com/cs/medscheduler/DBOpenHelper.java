@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+@SuppressWarnings("javadoc")
 public class DBOpenHelper extends SQLiteOpenHelper
 {
     public static final String DATABASE_NAME = "medical_scheduler.db";
@@ -49,6 +50,9 @@ public class DBOpenHelper extends SQLiteOpenHelper
 
         Log.d(DBOpenHelper.class.getName(), "Creating notes table.");
         mDatabase.execSQL(DB.SQL_CREATE_NOTES_TABLE);
+
+        Log.d(DBOpenHelper.class.getName(), "Creating login table.");
+        mDatabase.execSQL(DB.SQL_CREATE_LOGIN_TABLE);
     }
 
     public void onUpgrade (SQLiteDatabase db, int oldVersion, int newVersion)
@@ -63,6 +67,7 @@ public class DBOpenHelper extends SQLiteOpenHelper
         db.execSQL(DB.SQL_DELETE_CONDITIONS_TABLE);
         db.execSQL(DB.SQL_DELETE_DEMOGRAPHICS_TABLE);
         db.execSQL(DB.SQL_DELETE_PERSON_TABLE);
+        db.execSQL(DB.SQL_CREATE_LOGIN_TABLE);
         onCreate(db);
     }
 
