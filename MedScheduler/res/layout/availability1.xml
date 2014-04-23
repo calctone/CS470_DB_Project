@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:ems="10"
+        android:text="8am-9am" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button8to9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="13/06/14"
+        android:text="open" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:ems="10"
+        android:text="10am-11am" />
+
+    <Button
+        android:id="@+id/button10to11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="15/06/14"
+        android:text="Open" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:tag="17/06/14"
+        android:ems="10"
+        android:text="12pm-1pm" />
+
+    <Button
+        android:id="@+id/button12to1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open" />
+
+</LinearLayout>

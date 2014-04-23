@@ -42,7 +42,9 @@
         <activity
             android:name="com.cs.medscheduler.ProvidersActivity"
             android:label="@string/app_name" >
-        </activity>           
+        </activity>     
+        
+        <activity android:name=".SelectAppointment"></activity>
     </application>
 
 </manifest>
