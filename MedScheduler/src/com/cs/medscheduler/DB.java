@@ -88,11 +88,15 @@ public class DB
     {
         public static final String TABLE_NAME = "provider";
         public static final String COLUMN_NAME_PERSONID = "personid";
+        public static final String COLUMN_NAME_NAME = "name";
+        public static final String COLUMN_NAME_PHONE = "phone";
     }
 
     public static final String SQL_CREATE_PROVIDER_TABLE = "CREATE TABLE " + DB.Provider.TABLE_NAME
             + " (" + BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" + COMMA_SEP
-            + DB.Provider.COLUMN_NAME_PERSONID + " INT NOT NULL" + COMMA_SEP + " FOREIGN KEY ("
+            + DB.Provider.COLUMN_NAME_PERSONID + " INT NOT NULL" + COMMA_SEP
+            + DB.Provider.COLUMN_NAME_NAME + " VARCHAR (255) NOT NULL" + COMMA_SEP
+            + DB.Provider.COLUMN_NAME_PHONE + " INT NOT NULL" + COMMA_SEP + " FOREIGN KEY ("
             + DB.Provider.COLUMN_NAME_PERSONID + ") REFERENCES " + DB.Person.TABLE_NAME + " ("
             + BaseColumns._ID + "));";
 
@@ -140,32 +144,6 @@ public class DB
     public static final String SQL_DELETE_SERVICES_TABLE = "DROP TABLE IF EXISTS "
             + DB.Services.TABLE_NAME;
 
-    public static abstract class Appointments implements BaseColumns
-    {
-        public static final String TABLE_NAME = "appointments";
-        public static final String COLUMN_NAME_PERSONID = "personid";
-        public static final String COLUMN_NAME_PROVIDERID = "providerid";
-        public static final String COLUMN_NAME_LOCATIONID = "locationid";
-        public static final String COLUMN_NAME_APPT_DATE_TM = "appt_date_tm";
-    }
-
-    public static final String SQL_CREATE_APPOINTMENTS_TABLE = "CREATE TABLE "
-            + DB.Appointments.TABLE_NAME + " (" + BaseColumns._ID
-            + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" + COMMA_SEP
-            + DB.Appointments.COLUMN_NAME_PERSONID + " INT NOT NULL" + COMMA_SEP
-            + DB.Appointments.COLUMN_NAME_PROVIDERID + " INT NOT NULL" + COMMA_SEP
-            + DB.Appointments.COLUMN_NAME_LOCATIONID + " INT NOT NULL" + COMMA_SEP
-            + DB.Appointments.COLUMN_NAME_APPT_DATE_TM + " DATE NOT NULL" + COMMA_SEP
-            + " FOREIGN KEY (" + DB.Appointments.COLUMN_NAME_PERSONID + ") REFERENCES "
-            + DB.Person.TABLE_NAME + " (" + BaseColumns._ID + ")" + COMMA_SEP + " FOREIGN KEY ("
-            + DB.Appointments.COLUMN_NAME_PROVIDERID + ") REFERENCES " + DB.Provider.TABLE_NAME
-            + " (" + BaseColumns._ID + ")" + COMMA_SEP + " FOREIGN KEY ("
-            + DB.Appointments.COLUMN_NAME_LOCATIONID + ") REFERENCES " + DB.Location.TABLE_NAME
-            + " (" + BaseColumns._ID + ")" + ");";
-
-    public static final String SQL_DELETE_APPOINTMENTS_TABLE = "DROP TABLE IF EXISTS "
-            + DB.Appointments.TABLE_NAME;
-
     public static abstract class Location implements BaseColumns
     {
         public static final String TABLE_NAME = "location";
@@ -194,6 +172,32 @@ public class DB
     public static final String SQL_DELETE_LOCATION_TABLE = "DROP TABLE IF EXISTS "
             + DB.Location.TABLE_NAME;
 
+    public static abstract class Appointments implements BaseColumns
+    {
+        public static final String TABLE_NAME = "appointments";
+        public static final String COLUMN_NAME_PERSONID = "personid";
+        public static final String COLUMN_NAME_PROVIDERID = "providerid";
+        public static final String COLUMN_NAME_LOCATIONID = "locationid";
+        public static final String COLUMN_NAME_APPT_DATE_TM = "appt_date_tm";
+    }
+
+    public static final String SQL_CREATE_APPOINTMENTS_TABLE = "CREATE TABLE "
+            + DB.Appointments.TABLE_NAME + " (" + BaseColumns._ID
+            + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" + COMMA_SEP
+            + DB.Appointments.COLUMN_NAME_PERSONID + " INT NOT NULL" + COMMA_SEP
+            + DB.Appointments.COLUMN_NAME_PROVIDERID + " INT NOT NULL" + COMMA_SEP
+            + DB.Appointments.COLUMN_NAME_LOCATIONID + " INT NOT NULL" + COMMA_SEP
+            + DB.Appointments.COLUMN_NAME_APPT_DATE_TM + " DATE NOT NULL" + COMMA_SEP
+            + " FOREIGN KEY (" + DB.Appointments.COLUMN_NAME_PERSONID + ") REFERENCES "
+            + DB.Person.TABLE_NAME + " (" + BaseColumns._ID + ")" + COMMA_SEP + " FOREIGN KEY ("
+            + DB.Appointments.COLUMN_NAME_PROVIDERID + ") REFERENCES " + DB.Provider.TABLE_NAME
+            + " (" + BaseColumns._ID + ")" + COMMA_SEP + " FOREIGN KEY ("
+            + DB.Appointments.COLUMN_NAME_LOCATIONID + ") REFERENCES " + DB.Location.TABLE_NAME
+            + " (" + BaseColumns._ID + ")" + ");";
+
+    public static final String SQL_DELETE_APPOINTMENTS_TABLE = "DROP TABLE IF EXISTS "
+            + DB.Appointments.TABLE_NAME;
+
     public static abstract class Notifications implements BaseColumns
     {
         public static final String TABLE_NAME = "notifications";
@@ -217,7 +221,7 @@ public class DB
     public static abstract class Notes implements BaseColumns
     {
         public static final String TABLE_NAME = "notes";
-        public static final String COLUMN_NAME_PROVIDERID = "providerId";
+        public static final String COLUMN_NAME_PROVIDERID = "providerid";
         public static final String COLUMN_NAME_NOTE_TEXT = "note_text";
     }
 
@@ -236,12 +240,16 @@ public class DB
         public static final String TABLE_NAME = "login";
         public static final String COLUMN_NAME_USER_NAME = "user_name";
         public static final String COLUMN_NAME_PASS = "pass";
+        public static final String COLUMN_NAME_PERSONID = "personid";
     }
 
     public static final String SQL_CREATE_LOGIN_TABLE = "CREATE TABLE " + DB.Login.TABLE_NAME
             + " (" + BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" + COMMA_SEP
             + DB.Login.COLUMN_NAME_USER_NAME + " INT NOT NULL" + COMMA_SEP
-            + DB.Login.COLUMN_NAME_PASS + " VARCHAR (255) NOT NULL );";
+            + DB.Login.COLUMN_NAME_PASS + " VARCHAR (255) NOT NULL" + COMMA_SEP
+            + DB.Login.COLUMN_NAME_PERSONID + " INT NOT NULL" + COMMA_SEP + " FOREIGN KEY ("
+            + DB.Login.COLUMN_NAME_PERSONID + ") REFERENCES " + DB.Person.TABLE_NAME + " ("
+            + BaseColumns._ID + "));";
 
     public static final String SQL_DELETE_LOGIN_TABLE = "DROP TABLE IF EXISTS "
             + DB.Login.TABLE_NAME;

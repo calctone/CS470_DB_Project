@@ -2,6 +2,7 @@ package com.cs.medscheduler;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -15,16 +16,16 @@ import android.widget.Toast;
 
 import com.cs.medscheduler.entity.LoginEntity;
 import com.cs.medscheduler.entity.PersonEntity;
-import com.example.medscheduler.R;
 
 @SuppressWarnings("javadoc")
 public class MainActivity extends Activity
 {
-    private final String TAG = "MainActivity";
-    private DBOpenHelper mDBHelper;
+    public static final String TAG = "MainActivity";
 
-    private EditText userName;
-    private EditText password;
+    private DBOpenHelper mDBHelper;
+    private AppPreferences mPrefs;
+    private EditText mUserName;
+    private EditText mPassword;
     private Button mCancelButton;
     private Button mLoginButton;
     private Button mRegisterButton;
@@ -36,7 +37,9 @@ public class MainActivity extends Activity
         Log.d(TAG, "onCreate(Bundle) called.");
         setContentView(R.layout.activity_main);
 
-        mDBHelper = new DBOpenHelper(this);
+        mDBHelper = ((MedSchedulerApplication) getApplication()).getDBHelper();
+        mPrefs = new AppPreferences(MainActivity.this);
+
         mCancelButton = (Button) findViewById(R.id.btn_reg_cancel);
         mCancelButton.setOnClickListener(new View.OnClickListener()
         {
@@ -53,15 +56,15 @@ public class MainActivity extends Activity
             @Override
             public void onClick (View v)
             {
-                userName = (EditText) findViewById(R.id.edit_user_name);
-                password = (EditText) findViewById(R.id.edit_password);
+                mUserName = (EditText) findViewById(R.id.edit_user_name);
+                mPassword = (EditText) findViewById(R.id.edit_password);
                 LoginEntity loginEntity = new LoginEntity();
-                loginEntity.setUserName(userName.getText().toString());
-                loginEntity.setPassword(password.getText().toString());
+                loginEntity.setUserName(mUserName.getText().toString());
+                loginEntity.setPassword(mPassword.getText().toString());
                 if (getUser(loginEntity))
                 {
-                    // Intent i = new Intent(MainActivity.this, );
-                    // startActivityForResult(i, 0);
+                    Intent i = new Intent(MainActivity.this, SymptomsActivity.class);
+                    startActivityForResult(i, 0);
                 }
             }
         });
@@ -72,12 +75,7 @@ public class MainActivity extends Activity
             @Override
             public void onClick (View v)
             {
-                userName = (EditText) findViewById(R.id.edit_user_name);
-                password = (EditText) findViewById(R.id.edit_password);
-                LoginEntity loginEntity = new LoginEntity();
-                loginEntity.setUserName(userName.getText().toString());
-                loginEntity.setPassword(password.getText().toString());
-                registerUser(loginEntity);
+                registerUser();
             }
         });
     }
@@ -105,17 +103,31 @@ public class MainActivity extends Activity
 
         SQLiteDatabase db = mDBHelper.getWritableDatabase();
         String[] projection = { BaseColumns._ID, DB.Login.COLUMN_NAME_USER_NAME,
-                DB.Login.COLUMN_NAME_PASS };
+                DB.Login.COLUMN_NAME_PASS, DB.Login.COLUMN_NAME_PERSONID };
         Cursor c = db.query(DB.Login.TABLE_NAME, projection, DB.Login.COLUMN_NAME_USER_NAME + " = "
-                + "\"" + loginEntity.getUserName().trim() + "\"", null, null, null, null);
+                + "\"" + loginEntity.getUserName().trim() + "\"" + " AND "
+                + DB.Login.COLUMN_NAME_PASS + " = " + "\"" + loginEntity.getPassword().trim()
+                + "\"", null, null, null, null);
         c.moveToFirst();
 
         if (!c.isAfterLast() && c.getInt(0) > 0 && c.getString(1).trim() != "")
         {
-            Log.d(MainActivity.class.getName(), "User exists: " + c.getString(1).trim());
+            Log.d(MainActivity.class.getName(), "Successfully logged in: " + c.getString(1).trim());
             Toast.makeText(getApplicationContext(),
                     "Successfully logged in. Welcome " + loginEntity.getUserName(),
                     Toast.LENGTH_LONG).show();
+
+            mPrefs.getPrefs()
+                    .edit()
+                    .putString(AppPreferences.USER_KEY, loginEntity.getUserName())
+                    .commit();
+            mPrefs.getPrefs()
+                    .edit()
+                    .putString(AppPreferences.PASS_KEY, loginEntity.getPassword())
+                    .commit();
+
+            mPrefs.getPrefs().edit().putInt(AppPreferences.ID_KEY, c.getInt(2)).commit();
+
             return true;
         }
 
@@ -127,41 +139,12 @@ public class MainActivity extends Activity
         return false;
     }
 
-    protected void registerUser (LoginEntity loginEntity)
+    protected void registerUser ()
     {
-        Log.d(MainActivity.class.getName(), "Registering user: " + loginEntity.getUserName());
+        Log.d(MainActivity.class.getName(), "Registering user.");
 
-        if (loginEntity.getUserName() == null || loginEntity.getUserName().trim().isEmpty()
-                || loginEntity.getPassword() == null || loginEntity.getPassword().trim().isEmpty())
-        {
-            Log.d(MainActivity.class.getName(), "Invalid user name or password provided.");
-            Toast.makeText(getApplicationContext(), "Invalid Username/Password", Toast.LENGTH_LONG)
-                    .show();
-            return;
-        }
-
-        SQLiteDatabase db = mDBHelper.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(DB.Login.COLUMN_NAME_USER_NAME, loginEntity.getUserName());
-        values.put(DB.Login.COLUMN_NAME_PASS, loginEntity.getPassword());
-
-        long insertId = db.insert(DB.Login.TABLE_NAME, "null", values);
-        if (insertId > 0)
-        {
-            Log.d(MainActivity.class.getName(), "Successfully inserted login with ID: " + insertId);
-            Toast.makeText(getApplicationContext(), "Successfully registered user.",
-                    Toast.LENGTH_LONG).show();
-
-        } else
-        {
-            Log.d(MainActivity.class.getName(),
-                    "Failed to insert user with name: " + loginEntity.getUserName());
-            Toast.makeText(getApplicationContext(), "Invalid Username/Password", Toast.LENGTH_LONG)
-                    .show();
-            userName.setText("");
-            password.setText("");
-        }
+        Intent i = new Intent(MainActivity.this, RegisterActivity.class);
+        startActivityForResult(i, 0);
     }
 
     public void insertPerson (PersonEntity personEntity)

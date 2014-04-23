@@ -34,37 +34,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/chk_ears" />
+
     <CheckBox
         android:id="@+id/chk_throat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/chk_throat" />
+
     <CheckBox
         android:id="@+id/chk_arms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/chk_throat" />
+        android:text="@string/chk_arms" />
+
     <CheckBox
         android:id="@+id/chk_legs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/chk_throat" />
+        android:text="@string/chk_legs" />
+
     <CheckBox
         android:id="@+id/chkGenital"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/chk_genital" />
-    
-    <EditText
-    android:inputType="textMultiLine" 
-    android:lines="8" 
-    android:minLines="6" 
-    android:gravity="top|left" 
-    android:maxLines="10" 
-    android:layout_height="wrap_content" 
-    android:layout_width="fill_parent" 
-    android:scrollbars="vertical"> 
-    </EditText>
  
     <Button
         android:id="@+id/btn_submit"

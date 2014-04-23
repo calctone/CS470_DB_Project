@@ -1,13 +1,12 @@
 package com.cs.medscheduler.entity;
 
-import java.util.Date;
 
 @SuppressWarnings("javadoc")
 public class DemographicsEntity
 {
     private int id;
     private int personId;
-    private Date dob;
+    private String dob;
     private String street;
     private String city;
     private String state;
@@ -35,12 +34,12 @@ public class DemographicsEntity
         return personId;
     }
 
-    public void setDOB (Date dob)
+    public void setDOB (String dob)
     {
         this.dob = dob;
     }
 
-    public Date getDOB ()
+    public String getDOB ()
     {
         return dob;
     }

@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.medscheduler"
+    package="com.cs.medscheduler"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="9"
         android:targetSdkVersion="18" />
+    
+    <uses-permission
+     android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+     android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme" 
+        android:name="MedSchedulerApplication" >
         <activity
             android:name="com.cs.medscheduler.MainActivity"
             android:label="@string/app_name" >
@@ -26,6 +31,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.cs.medscheduler.RegisterActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.cs.medscheduler.SymptomsActivity"
+            android:label="@string/app_name" >
+        </activity>   
+        <activity
+            android:name="com.cs.medscheduler.ProvidersActivity"
+            android:label="@string/app_name" >
+        </activity>           
     </application>
 
 </manifest>

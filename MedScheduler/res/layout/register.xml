@@ -17,7 +17,7 @@
             android:layout_margin="5dp"
             android:text="@string/txt_phone"
             android:textSize="20sp" />
-
+        
         <TextView
             android:id="@+id/txt_city"
             android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
             android:layout_below="@+id/edit_first_name"
             android:layout_margin="5dp"
             android:text="@string/txt_last_name"
-            android:textSize="@string/txt_role" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txt_first_name"
@@ -183,7 +183,7 @@
             android:ems="10"
             android:inputType="textPostalAddress" />
 
-        <EditText
+         <EditText
             android:id="@+id/edit_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -225,14 +225,74 @@
             android:layout_toRightOf="@+id/txt_user_name"
             android:text="@string/btn_cancel" />
 
+        <TextView
+            android:id="@+id/txt_street"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/txt_country"
+            android:layout_margin="5dp"
+            android:text="@string/txt_street"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edit_street"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/edit_country"
+            android:layout_alignRight="@+id/edit_country"
+            android:layout_below="@+id/txt_country"
+            android:ems="10"
+            android:inputType="text" />
+
         <Button
             android:id="@+id/btn_reg_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_country"
-            android:layout_marginTop="48dp"
+            android:layout_below="@+id/txt_state"
+            android:layout_marginTop="80dp"
             android:layout_toRightOf="@+id/txt_role"
             android:text="@string/btn_register" />
+
+        <TextView
+            android:id="@+id/txtDOB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/txt_state"
+            android:layout_margin="5dp"
+            android:text="@string/txt_dob"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/edit_street"
+            android:layout_margin="5dp"
+            android:text="@string/txt_state"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edit_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/edit_street"
+            android:layout_alignRight="@+id/edit_street"
+            android:layout_below="@+id/edit_street"
+            android:ems="10"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edit_dob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/edit_state"
+            android:layout_alignTop="@+id/txtDOB"
+            android:layout_toRightOf="@+id/btn_reg_register"
+            android:ems="10"
+            android:inputType="text" />
         
     </RelativeLayout>
 

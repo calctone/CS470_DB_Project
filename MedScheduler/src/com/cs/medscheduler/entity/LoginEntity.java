@@ -5,6 +5,7 @@ public class LoginEntity
 {
     private String userName;
     private String password;
+    private int personId;
 
     /**
      * @return The userName.
@@ -47,5 +48,22 @@ public class LoginEntity
     public String toString ()
     {
         return "LoginEntity [userName=" + userName + ", password=" + password + "]";
+    }
+
+    /**
+     * @return The personId.
+     */
+    public int getPersonId ()
+    {
+        return personId;
+    }
+
+    /**
+     * @param personId
+     *            The personId to set.
+     */
+    public void setPersonId (int personId)
+    {
+        this.personId = personId;
     }
 }
