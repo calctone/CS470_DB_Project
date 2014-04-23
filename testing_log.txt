@@ -1,0 +1,134 @@
+04-23 04:51:43.986: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted person data.
+04-23 04:51:43.996: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted person data.
+04-23 04:51:44.006: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted person data.
+04-23 04:51:44.016: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted person data.
+04-23 04:51:44.026: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Demographics data.
+04-23 04:51:44.036: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Demographics data.
+04-23 04:51:44.046: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Conditions data.
+04-23 04:51:44.056: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Conditions data.
+04-23 04:51:44.066: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Provider data.
+04-23 04:51:44.076: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Provider data.
+04-23 04:51:44.086: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Provider data.
+04-23 04:51:44.096: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Visit data.
+04-23 04:51:44.106: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Services data.
+04-23 04:51:44.116: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Services data.
+04-23 04:51:44.126: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Services data.
+04-23 04:51:44.136: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Location data.
+04-23 04:51:44.146: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Appointments data.
+04-23 04:51:44.156: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Notifications data.
+04-23 04:51:44.186: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Notes data.
+04-23 04:51:44.206: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Login data.
+04-23 04:51:44.216: D/WelcomeActivity(775): onCreate(Bundle) called.
+04-23 04:51:44.396: D/dalvikvm(775): GC_CONCURRENT freed 100K, 9% free 2705K/2948K, paused 18ms+12ms, total 73ms
+04-23 04:51:44.486: D/libEGL(775): loaded /system/lib/egl/libEGL_emulation.so
+04-23 04:51:44.496: D/(775): HostConnection::get() New Host Connection established 0x2a149640, tid 775
+04-23 04:51:44.546: D/libEGL(775): loaded /system/lib/egl/libGLESv1_CM_emulation.so
+04-23 04:51:44.556: D/libEGL(775): loaded /system/lib/egl/libGLESv2_emulation.so
+04-23 04:51:44.686: W/EGL_emulation(775): eglSurfaceAttrib not implemented
+04-23 04:51:44.717: D/OpenGLRenderer(775): Enabling debug mode 0
+04-23 04:51:48.106: D/MainActivity(775): onCreate(Bundle) called.
+04-23 04:51:48.356: D/dalvikvm(775): GC_CONCURRENT freed 156K, 10% free 2959K/3260K, paused 74ms+3ms, total 150ms
+04-23 04:51:48.676: W/EGL_emulation(775): eglSurfaceAttrib not implemented
+04-23 04:51:53.896: D/InputEventConsistencyVerifier(775): KeyEvent: ACTION_UP but key was not down.
+04-23 04:51:53.896: D/InputEventConsistencyVerifier(775):   in android.widget.EditText{40d8ae40 VFED..CL .F...... 120,119-270,154 #7f080003 app:id/edit_password}
+04-23 04:51:53.896: D/InputEventConsistencyVerifier(775):   0: sent at 72941000000, KeyEvent { action=ACTION_UP, keyCode=KEYCODE_TAB, scanCode=15, metaState=0, flags=0x8, repeatCount=0, eventTime=72941, downTime=72857, deviceId=0, source=0x101 }
+04-23 04:51:56.176: D/com.cs.medscheduler.MainActivity(775): Checking if user exists: bob
+04-23 04:51:56.206: D/com.cs.medscheduler.MainActivity(775): Successfully logged in: bob
+04-23 04:51:56.536: D/SymptomsActivity(775): onCreate(Bundle) called.
+04-23 04:51:57.046: I/Choreographer(775): Skipped 31 frames!  The application may be doing too much work on its main thread.
+04-23 04:51:57.478: W/EGL_emulation(775): eglSurfaceAttrib not implemented
+04-23 04:52:00.456: D/dalvikvm(775): GC_CONCURRENT freed 130K, 8% free 3217K/3492K, paused 5ms+61ms, total 196ms
+04-23 04:52:00.946: D/com.cs.medscheduler.MedSchedulerApplication(775): Successfully inserted Conditions data.
+04-23 04:52:01.216: D/ProvidersActivity(775): onCreate(Bundle) called.
+04-23 04:52:01.846: D/dalvikvm(775): GC_CONCURRENT freed 488K, 17% free 3202K/3836K, paused 70ms+52ms, total 189ms
+04-23 04:52:02.156: I/Choreographer(775): Skipped 56 frames!  The application may be doing too much work on its main thread.
+04-23 04:52:02.916: W/EGL_emulation(775): eglSurfaceAttrib not implemented
+04-23 04:52:02.956: I/Choreographer(775): Skipped 37 frames!  The application may be doing too much work on its main thread.
+04-23 04:52:05.416: I/Choreographer(775): Skipped 87 frames!  The application may be doing too much work on its main thread.
+04-23 04:52:33.019: D/SymptomsActivity(775): onCreate(Bundle) called.
+04-23 04:52:33.419: D/dalvikvm(775): GC_CONCURRENT freed 500K, 19% free 3109K/3836K, paused 4ms+161ms, total 265ms
+04-23 04:52:33.869: W/EGL_emulation(775): eglSurfaceAttrib not implemented
+04-23 04:52:33.929: D/InputEventConsistencyVerifier(775): KeyEvent: ACTION_UP but key was not down.
+04-23 04:52:33.929: D/InputEventConsistencyVerifier(775):   in android.view.ViewRootImpl@40da6dc0
+04-23 04:52:33.929: D/InputEventConsistencyVerifier(775):   0: sent at 111470000000, KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=158, metaState=0, flags=0x8, repeatCount=0, eventTime=111470, downTime=111388, deviceId=0, source=0x101 }
+04-23 04:52:34.798: D/MainActivity(775): onCreate(Bundle) called.
+04-23 04:52:35.634: W/EGL_emulation(775): eglSurfaceAttrib not implemented
+04-23 04:52:35.809: D/InputEventConsistencyVerifier(775): KeyEvent: ACTION_UP but key was not down.
+04-23 04:52:35.809: D/InputEventConsistencyVerifier(775):   in android.view.ViewRootImpl@40dcb570
+04-23 04:52:35.809: D/InputEventConsistencyVerifier(775):   0: sent at 112031000000, KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=158, metaState=0, flags=0x8, repeatCount=0, eventTime=112031, downTime=111964, deviceId=0, source=0x101 }
+04-23 04:52:35.869: I/Choreographer(775): Skipped 34 frames!  The application may be doing too much work on its main thread.
+04-23 04:52:36.659: D/WelcomeActivity(775): onCreate(Bundle) called.
+04-23 04:52:36.889: D/dalvikvm(775): GC_FOR_ALLOC freed 213K, 17% free 3193K/3836K, paused 96ms, total 116ms
+04-23 04:52:36.889: I/dalvikvm-heap(775): Grow heap (frag case) to 3.390MB for 141712-byte allocation
+04-23 04:52:37.029: D/dalvikvm(775): GC_FOR_ALLOC freed 66K, 18% free 3265K/3976K, paused 140ms, total 140ms
+04-23 04:52:37.149: D/dalvikvm(775): GC_FOR_ALLOC freed 0K, 18% free 3265K/3976K, paused 119ms, total 119ms
+04-23 04:52:37.149: I/dalvikvm-heap(775): Grow heap (frag case) to 3.385MB for 62800-byte allocation
+04-23 04:52:37.289: D/dalvikvm(775): GC_FOR_ALLOC freed 0K, 18% free 3327K/4040K, paused 138ms, total 138ms
+04-23 04:52:37.319: I/Choreographer(775): Skipped 40 frames!  The application may be doing too much work on its main thread.
+04-23 04:52:37.785: W/EGL_emulation(775): eglSurfaceAttrib not implemented
+04-23 04:52:38.079: I/Choreographer(775): Skipped 43 frames!  The application may be doing too much work on its main thread.
+04-23 04:52:49.399: E/Trace(849): error opening trace file: No such file or directory (2)
+04-23 04:52:49.440: W/ActivityThread(849): Application com.cs.medscheduler is waiting for the debugger on port 8100...
+04-23 04:52:49.481: I/System.out(849): Sending WAIT chunk
+04-23 04:52:49.559: I/dalvikvm(849): Debugger is active
+04-23 04:52:49.689: I/System.out(849): Debugger has connected
+04-23 04:52:49.689: I/System.out(849): waiting for debugger to settle...
+04-23 04:52:49.888: I/System.out(849): waiting for debugger to settle...
+04-23 04:52:50.089: I/System.out(849): waiting for debugger to settle...
+04-23 04:52:50.299: I/System.out(849): waiting for debugger to settle...
+04-23 04:52:50.500: I/System.out(849): waiting for debugger to settle...
+04-23 04:52:50.729: I/System.out(849): waiting for debugger to settle...
+04-23 04:52:50.929: I/System.out(849): waiting for debugger to settle...
+04-23 04:52:51.190: I/System.out(849): waiting for debugger to settle...
+04-23 04:52:51.393: I/System.out(849): waiting for debugger to settle...
+04-23 04:52:51.613: I/System.out(849): debugger has settled (1421)
+04-23 04:52:52.219: D/dalvikvm(849): threadid=1: still suspended after undo (sc=1 dc=1)
+04-23 04:52:59.669: D/com.cs.medscheduler.MedSchedulerApplication(849): Inserting mock data 
+04-23 04:52:59.819: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted person data.
+04-23 04:52:59.829: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted person data.
+04-23 04:52:59.849: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted person data.
+04-23 04:52:59.869: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted person data.
+04-23 04:52:59.889: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Demographics data.
+04-23 04:52:59.909: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Demographics data.
+04-23 04:52:59.929: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Conditions data.
+04-23 04:52:59.949: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Conditions data.
+04-23 04:52:59.969: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Provider data.
+04-23 04:52:59.979: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Provider data.
+04-23 04:53:00.009: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Provider data.
+04-23 04:53:00.049: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Visit data.
+04-23 04:53:00.099: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Services data.
+04-23 04:53:00.149: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Services data.
+04-23 04:53:00.169: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Services data.
+04-23 04:53:00.189: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Location data.
+04-23 04:53:00.209: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Appointments data.
+04-23 04:53:00.229: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Notifications data.
+04-23 04:53:00.239: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Notes data.
+04-23 04:53:00.259: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Login data.
+04-23 04:53:00.289: D/WelcomeActivity(849): onCreate(Bundle) called.
+04-23 04:53:00.869: D/dalvikvm(849): GC_CONCURRENT freed 204K, 12% free 2560K/2908K, paused 77ms+85ms, total 247ms
+04-23 04:53:01.179: D/libEGL(849): loaded /system/lib/egl/libEGL_emulation.so
+04-23 04:53:01.189: D/(849): HostConnection::get() New Host Connection established 0x2a154cd0, tid 849
+04-23 04:53:01.269: D/libEGL(849): loaded /system/lib/egl/libGLESv1_CM_emulation.so
+04-23 04:53:01.269: D/libEGL(849): loaded /system/lib/egl/libGLESv2_emulation.so
+04-23 04:53:01.449: W/EGL_emulation(849): eglSurfaceAttrib not implemented
+04-23 04:53:01.459: D/OpenGLRenderer(849): Enabling debug mode 0
+04-23 04:53:03.539: D/MainActivity(849): onCreate(Bundle) called.
+04-23 04:53:04.099: D/dalvikvm(849): GC_CONCURRENT freed 17K, 8% free 2934K/3184K, paused 74ms+94ms, total 261ms
+04-23 04:53:05.009: W/EGL_emulation(849): eglSurfaceAttrib not implemented
+04-23 04:53:09.849: D/InputEventConsistencyVerifier(849): KeyEvent: ACTION_UP but key was not down.
+04-23 04:53:09.849: D/InputEventConsistencyVerifier(849):   in android.widget.EditText{40ce2480 VFED..CL .F...... 120,119-270,154 #7f080003 app:id/edit_password}
+04-23 04:53:09.849: D/InputEventConsistencyVerifier(849):   0: sent at 148650000000, KeyEvent { action=ACTION_UP, keyCode=KEYCODE_TAB, scanCode=15, metaState=0, flags=0x8, repeatCount=0, eventTime=148650, downTime=148568, deviceId=0, source=0x101 }
+04-23 04:53:13.049: D/com.cs.medscheduler.MainActivity(849): Checking if user exists: bob
+04-23 04:53:13.069: D/com.cs.medscheduler.MainActivity(849): Successfully logged in: bob
+04-23 04:53:13.609: D/SymptomsActivity(849): onCreate(Bundle) called.
+04-23 04:53:14.979: D/dalvikvm(849): GC_CONCURRENT freed 121K, 8% free 3199K/3464K, paused 4ms+6ms, total 179ms
+04-23 04:53:15.129: I/Choreographer(849): Skipped 93 frames!  The application may be doing too much work on its main thread.
+04-23 04:53:15.989: W/EGL_emulation(849): eglSurfaceAttrib not implemented
+04-23 04:53:19.510: D/com.cs.medscheduler.MedSchedulerApplication(849): Successfully inserted Conditions data.
+04-23 04:53:19.830: D/ProvidersActivity(849): onCreate(Bundle) called.
+04-23 04:53:21.530: D/dalvikvm(849): GC_CONCURRENT freed 412K, 15% free 3194K/3752K, paused 69ms+101ms, total 244ms
+04-23 04:53:22.389: D/dalvikvm(849): GC_CONCURRENT freed 555K, 21% free 3048K/3844K, paused 81ms+3ms, total 211ms
+04-23 04:53:22.389: D/dalvikvm(849): WAIT_FOR_CONCURRENT_GC blocked 68ms
+04-23 04:53:22.939: I/Choreographer(849): Skipped 188 frames!  The application may be doing too much work on its main thread.
+04-23 04:53:23.929: W/EGL_emulation(849): eglSurfaceAttrib not implemented
+04-23 04:53:24.150: I/Choreographer(849): Skipped 34 frames!  The application may be doing too much work on its main thread.
