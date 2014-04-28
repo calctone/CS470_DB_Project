@@ -63,6 +63,8 @@ public class MainActivity extends Activity
                 loginEntity.setPassword(mPassword.getText().toString());
                 if (getUser(loginEntity))
                 {
+                    mUserName.setText("");
+                    mPassword.setText("");
                     Intent i = new Intent(MainActivity.this, SymptomsActivity.class);
                     startActivityForResult(i, 0);
                 }
@@ -96,7 +98,7 @@ public class MainActivity extends Activity
                 || loginEntity.getPassword() == null || loginEntity.getPassword().trim().isEmpty())
         {
             Log.d(MainActivity.class.getName(), "Invalid user name or password provided.");
-            Toast.makeText(getApplicationContext(), "Invalid Username/Password", Toast.LENGTH_LONG)
+            Toast.makeText(getApplicationContext(), "Invalid Username/Password", Toast.LENGTH_SHORT)
                     .show();
             return false;
         }
@@ -112,10 +114,11 @@ public class MainActivity extends Activity
 
         if (!c.isAfterLast() && c.getInt(0) > 0 && c.getString(1).trim() != "")
         {
-            Log.d(MainActivity.class.getName(), "Successfully logged in: " + c.getString(1).trim());
+            Log.d(MainActivity.class.getName(), "Successfully logged in: " + c.getString(1).trim()
+                    + " ID: " + c.getInt(3));
             Toast.makeText(getApplicationContext(),
                     "Successfully logged in. Welcome " + loginEntity.getUserName(),
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
 
             mPrefs.getPrefs()
                     .edit()
@@ -126,7 +129,7 @@ public class MainActivity extends Activity
                     .putString(AppPreferences.PASS_KEY, loginEntity.getPassword())
                     .commit();
 
-            mPrefs.getPrefs().edit().putInt(AppPreferences.ID_KEY, c.getInt(2)).commit();
+            mPrefs.getPrefs().edit().putInt(AppPreferences.ID_KEY, c.getInt(3)).commit();
 
             return true;
         }
@@ -134,7 +137,7 @@ public class MainActivity extends Activity
         Log.d(MainActivity.class.getName(),
                 "Failed to login with username: " + loginEntity.getUserName());
         Toast.makeText(getApplicationContext(), "Failed to login with username/password.",
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_SHORT).show();
 
         return false;
     }

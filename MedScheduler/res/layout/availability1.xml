@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:editable="false"
         android:ems="10"
-        android:text="8am-9am" >
+        android:text="@string/txt_8to9" >
 
         <requestFocus />
     </EditText>
@@ -19,8 +19,7 @@
         android:id="@+id/button8to9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:tag="13/06/14"
-        android:text="open" />
+        android:text="@string/btn_open" />
 
     <EditText
         android:id="@+id/editText2"
@@ -28,28 +27,27 @@
         android:layout_height="wrap_content"
         android:editable="false"
         android:ems="10"
-        android:text="10am-11am" />
+        android:text="@string/txt_10to11" />
 
     <Button
         android:id="@+id/button10to11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:tag="15/06/14"
-        android:text="Open" />
+        android:text="@string/btn_open" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
         android:editable="false"
-        android:tag="17/06/14"
+        android:tag="@string/txt_12to1"
         android:ems="10"
-        android:text="12pm-1pm" />
+        android:text="@string/txt_12to1" />
 
     <Button
         android:id="@+id/button12to1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open" />
+        android:text="@string/btn_open" />
 
 </LinearLayout>

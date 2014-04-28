@@ -238,7 +238,8 @@ public class MedSchedulerApplication extends Application
         values.put(DB.Appointments.COLUMN_NAME_PERSONID, prsnId1);
         values.put(DB.Appointments.COLUMN_NAME_PROVIDERID, prov1);
         values.put(DB.Appointments.COLUMN_NAME_LOCATIONID, loc1);
-        values.put(DB.Appointments.COLUMN_NAME_APPT_DATE_TM, "06/02/2014");
+        values.put(DB.Appointments.COLUMN_NAME_APPT_DATE_TM,
+                getResources().getString(R.string.txt_8to9));
 
         long appt1 = db.insert(DB.Appointments.TABLE_NAME, "null", values);
         if (appt1 > 0)

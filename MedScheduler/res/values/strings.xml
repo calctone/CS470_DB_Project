@@ -33,5 +33,11 @@
     <string name="txt_state">State:</string>
     <string name="txt_dob">DOB:</string>
     <string name="btn_submit">Submit</string>
+    <string name="btn_confirmed">Confirmed</string>
+    <string name="btn_closed">Closed</string>
+    <string name="btn_open">Open</string>
+    <string name="txt_8to9">2014/06/13:08:00</string>
+    <string name="txt_10to11">2014/06/14:10:00</string>
+    <string name="txt_12to1">2014/06/15:12:00</string>
 
 </resources>

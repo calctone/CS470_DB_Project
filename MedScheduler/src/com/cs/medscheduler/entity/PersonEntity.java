@@ -7,7 +7,7 @@ public class PersonEntity
     private String firstName;
     private String mInit;
     private String lastName;
-    private int ssn;
+    private String ssn;
 
     public void setId (int id)
     {
@@ -49,12 +49,12 @@ public class PersonEntity
         return lastName;
     }
 
-    public void setSSN (int ssn)
+    public void setSSN (String ssn)
     {
         this.ssn = ssn;
     }
 
-    public int getSSN ()
+    public String getSSN ()
     {
         return ssn;
     }

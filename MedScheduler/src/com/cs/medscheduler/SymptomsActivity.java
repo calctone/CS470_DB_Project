@@ -3,13 +3,17 @@ package com.cs.medscheduler;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.provider.BaseColumns;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
+
+import java.util.Date;
 
 @SuppressWarnings("javadoc")
 public class SymptomsActivity extends Activity
@@ -28,6 +32,9 @@ public class SymptomsActivity extends Activity
 
     private Button mSubmitButton;
 
+    AppPreferences appPreferences;
+    int personId;
+
     @Override
     protected void onCreate (Bundle savedInstanceState)
     {
@@ -37,6 +44,9 @@ public class SymptomsActivity extends Activity
 
         mDBHelper = ((MedSchedulerApplication) getApplication()).getDBHelper();
 
+        appPreferences = new AppPreferences(SymptomsActivity.this);
+        personId = appPreferences.getPrefs().getInt(AppPreferences.ID_KEY, 0);
+
         mHead = (CheckBox) findViewById(R.id.chk_head);
         mBody = (CheckBox) findViewById(R.id.chk_body);
         mNose = (CheckBox) findViewById(R.id.chk_nose);
@@ -45,6 +55,52 @@ public class SymptomsActivity extends Activity
         mArms = (CheckBox) findViewById(R.id.chk_arms);
         mLegs = (CheckBox) findViewById(R.id.chk_legs);
         mGenital = (CheckBox) findViewById(R.id.chkGenital);
+
+        SQLiteDatabase db = mDBHelper.getWritableDatabase();
+        String[] projection = { BaseColumns._ID, DB.Conditions.COLUMN_NAME_PERSONID,
+                DB.Conditions.COLUMN_NAME_NAME };
+        Cursor c = db.query(DB.Conditions.TABLE_NAME, projection,
+                DB.Conditions.COLUMN_NAME_PERSONID + " = " + personId, null, null, null, null);
+
+        while (c.moveToNext())
+        {
+            String name = c.getString(2);
+            if (!name.isEmpty())
+            {
+                if (name.contains(mHead.getText().toString()))
+                {
+                    mHead.setChecked(true);
+                }
+                if (name.contains(mBody.getText().toString()))
+                {
+                    mBody.setChecked(true);
+                }
+                if (name.contains(mNose.getText().toString()))
+                {
+                    mNose.setChecked(true);
+                }
+                if (name.contains(mEars.getText().toString()))
+                {
+                    mEars.setChecked(true);
+                }
+                if (name.contains(mThroat.getText().toString()))
+                {
+                    mThroat.setChecked(true);
+                }
+                if (name.contains(mArms.getText().toString()))
+                {
+                    mArms.setChecked(true);
+                }
+                if (name.contains(mLegs.getText().toString()))
+                {
+                    mLegs.setChecked(true);
+                }
+                if (name.contains(mGenital.getText().toString()))
+                {
+                    mGenital.setChecked(true);
+                }
+            }
+        }
 
         mSubmitButton = (Button) findViewById(R.id.btn_submit);
         mSubmitButton.setOnClickListener(new View.OnClickListener()
@@ -107,7 +163,7 @@ public class SymptomsActivity extends Activity
         values.put(DB.Conditions.COLUMN_NAME_NAME, symp);
         values.put(DB.Conditions.COLUMN_NAME_TYPE, "Patient Reported");
         values.put(DB.Conditions.COLUMN_NAME_CLASSIFICATION, "Medical");
-        values.put(DB.Conditions.COLUMN_NAME_ONSET_DATE_TM, "04-28-2014");
+        values.put(DB.Conditions.COLUMN_NAME_ONSET_DATE_TM, new Date().toString());
 
         long id = db.insert(DB.Conditions.TABLE_NAME, "null", values);
         if (id > 0)
@@ -116,7 +172,7 @@ public class SymptomsActivity extends Activity
         }
 
         Toast.makeText(getApplicationContext(), "Successfully inserted symptoms.",
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_SHORT).show();
 
         return true;
     }

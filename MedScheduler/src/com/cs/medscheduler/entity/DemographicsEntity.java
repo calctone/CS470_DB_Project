@@ -1,6 +1,5 @@
 package com.cs.medscheduler.entity;
 
-
 @SuppressWarnings("javadoc")
 public class DemographicsEntity
 {
@@ -12,7 +11,7 @@ public class DemographicsEntity
     private String state;
     private String country;
     private int zip;
-    private int phone;
+    private String phone;
 
     public void setId (int id)
     {
@@ -94,12 +93,12 @@ public class DemographicsEntity
         return zip;
     }
 
-    public void setPhone (int phone)
+    public void setPhone (String phone)
     {
         this.phone = phone;
     }
 
-    public int getPhone ()
+    public String getPhone ()
     {
         return phone;
     }

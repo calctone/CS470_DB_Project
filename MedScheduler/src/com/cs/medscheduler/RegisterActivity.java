@@ -94,7 +94,7 @@ public class RegisterActivity extends Activity
                 || loginEntity.getPassword() == null || loginEntity.getPassword().trim().isEmpty())
         {
             Log.d(MainActivity.class.getName(), "Invalid user name or password provided.");
-            Toast.makeText(getApplicationContext(), "Invalid Username/Password", Toast.LENGTH_LONG)
+            Toast.makeText(getApplicationContext(), "Invalid Username/Password", Toast.LENGTH_SHORT)
                     .show();
             return false;
         }
@@ -105,7 +105,7 @@ public class RegisterActivity extends Activity
         {
             Log.d(MainActivity.class.getName(), "User already exists.");
             Toast.makeText(getApplicationContext(),
-                    "User already exists! Please try a different username.", Toast.LENGTH_LONG)
+                    "User already exists! Please try a different username.", Toast.LENGTH_SHORT)
                     .show();
             return false;
         }
@@ -115,21 +115,22 @@ public class RegisterActivity extends Activity
         personEntity.setLastName(mLName.getText().toString());
         if (mSSN != null && !mSSN.getText().toString().trim().isEmpty())
         {
-            personEntity.setSSN(Integer.parseInt(mSSN.getText().toString()));
+            personEntity.setSSN(mSSN.getText().toString());
         }
 
         if (personEntity.getFirstName() == null || personEntity.getFirstName().trim().isEmpty()
                 || personEntity.getLastName() == null
-                || personEntity.getLastName().trim().isEmpty() || personEntity.getSSN() <= 0)
+                || personEntity.getLastName().trim().isEmpty()
+                || personEntity.getSSN().trim().isEmpty())
         {
             Toast.makeText(getApplicationContext(), "Please enter all the fields.",
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
             return false;
         }
 
         DemographicsEntity demogEntity = new DemographicsEntity();
         demogEntity.setDOB(mDOB.getText().toString());
-        demogEntity.setPhone(Integer.parseInt(mPhone.getText().toString()));
+        demogEntity.setPhone(mPhone.getText().toString());
         demogEntity.setStreet(mStreet.getText().toString());
         demogEntity.setState(mState.getText().toString());
         demogEntity.setCity(mCity.getText().toString());
@@ -149,13 +150,13 @@ public class RegisterActivity extends Activity
         {
             Log.d(MainActivity.class.getName(), "Successfully inserted person with ID: " + personId);
             Toast.makeText(getApplicationContext(), "Successfully inserted person.",
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
 
         } else
         {
             Log.d(MainActivity.class.getName(),
                     "Failed to insert person with name: " + loginEntity.getUserName());
-            Toast.makeText(getApplicationContext(), "Failed to insert person.", Toast.LENGTH_LONG)
+            Toast.makeText(getApplicationContext(), "Failed to insert person.", Toast.LENGTH_SHORT)
                     .show();
 
             return false;
@@ -171,13 +172,13 @@ public class RegisterActivity extends Activity
         {
             Log.d(MainActivity.class.getName(), "Successfully inserted login with ID: " + loginId);
             Toast.makeText(getApplicationContext(), "Successfully registered user.",
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
 
         } else
         {
             Log.d(MainActivity.class.getName(),
                     "Failed to insert user with name: " + loginEntity.getUserName());
-            Toast.makeText(getApplicationContext(), "Invalid Username/Password", Toast.LENGTH_LONG)
+            Toast.makeText(getApplicationContext(), "Invalid Username/Password", Toast.LENGTH_SHORT)
                     .show();
 
             return false;
@@ -199,14 +200,14 @@ public class RegisterActivity extends Activity
             Log.d(MainActivity.class.getName(), "Successfully inserted demographics with ID: "
                     + demogId);
             Toast.makeText(getApplicationContext(), "Successfully inserted demographics.",
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
 
         } else
         {
             Log.d(MainActivity.class.getName(), "Failed to insert demographics with name: "
                     + loginEntity.getUserName());
             Toast.makeText(getApplicationContext(), "Failed to insert demographics.",
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
 
             return false;
         }

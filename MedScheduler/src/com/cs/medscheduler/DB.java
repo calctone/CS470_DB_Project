@@ -25,7 +25,7 @@ public class DB
             + DB.Person.COLUMN_NAME_FIRST_NAME + " VARCHAR (64) NOT NULL" + COMMA_SEP
             + DB.Person.COLUMN_NAME_MIDDLE_INIT + " CHAR (1) NULL" + COMMA_SEP
             + DB.Person.COLUMN_NAME_LAST_NAME + " VARCHAR (64) NOT NULL" + COMMA_SEP
-            + DB.Person.COLUMN_NAME_SSN + " INT NULL" + " );";
+            + DB.Person.COLUMN_NAME_SSN + " VARCHAR (255) NULL" + " );";
 
     public static final String SQL_DELETE_PERSON_TABLE = "DROP TABLE IF EXISTS "
             + DB.Person.TABLE_NAME;
@@ -53,9 +53,9 @@ public class DB
             + DB.Demographics.COLUMN_NAME_STATE + " VARCHAR (2) NOT NULL" + COMMA_SEP
             + DB.Demographics.COLUMN_NAME_COUNTRY + " VARCHAR (64) NOT NULL" + COMMA_SEP
             + DB.Demographics.COLUMN_NAME_ZIP + " INT NOT NULL" + COMMA_SEP
-            + DB.Demographics.COLUMN_NAME_PHONE + " INT NULL" + COMMA_SEP + " FOREIGN KEY ("
-            + DB.Demographics.COLUMN_NAME_PERSONID + ") REFERENCES " + DB.Person.TABLE_NAME + " ("
-            + BaseColumns._ID + "));";
+            + DB.Demographics.COLUMN_NAME_PHONE + " VARCHAR (255) NULL" + COMMA_SEP
+            + " FOREIGN KEY (" + DB.Demographics.COLUMN_NAME_PERSONID + ") REFERENCES "
+            + DB.Person.TABLE_NAME + " (" + BaseColumns._ID + "));";
 
     public static final String SQL_DELETE_DEMOGRAPHICS_TABLE = "DROP TABLE IF EXISTS "
             + DB.Demographics.TABLE_NAME;
